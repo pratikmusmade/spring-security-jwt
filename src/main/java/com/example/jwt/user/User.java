@@ -36,15 +36,15 @@ public class User implements UserDetails{
 	private Role role;
 	
 	
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		System.out.println("Roles --> " + List.of(new SimpleGrantedAuthority(role.name())) );
 		return List.of(new SimpleGrantedAuthority(role.name()));
 	}
 	@Override
 	public String getUsername() {
-		// TODO Auto-generated method stub
+		// Set email as the userName for login
 		return email;
 	}
 	@Override
@@ -54,7 +54,6 @@ public class User implements UserDetails{
 	}
 	@Override
 	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 	@Override
@@ -65,8 +64,9 @@ public class User implements UserDetails{
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return true ;
+		return true;
 	}
-
+	
+	
 	
 }
